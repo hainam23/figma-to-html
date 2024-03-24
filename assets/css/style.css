@@ -1,9 +1,93 @@
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
-html{
-    font-size: 62.5%;
+html {
+  font-size: 62.5%;
+  /* không phục lại cỡ chữ mặc định theo rem */
 }
-body{
-    font-size: 1.6rem;
+body {
+  font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+}
+/* thuộc tính dùng chung */
+a {
+  text-decoration: none;
+}
+
+.btn {
+  display: inline-block;
+  min-width: 118px;
+  padding: 0px 16px;
+  line-height: 50px;
+  color: #fff;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border-radius: 24.5px;
+  background: #171100;
+}
+.main-content {
+  width: 1170px;
+  max-width: calc(100% - 48px);
+  margin-left: auto;
+  margin-right: auto;
+  /* overflow: scroll; */
+}
+/* thuộc tính của header */
+.header {
+  background: #fffcf4;
+}
+
+.header.fixed {
+  position: sticky;
+  top: -28px;
+}
+.header .body {
+  display: flex;
+  align-items: center;
+  padding: 36px 0 8px;
+}
+.nav {
+  margin-left: auto;
+}
+.nav ul {
+  display: flex;
+}
+.nav a {
+  position: relative;
+  color: #5f5b53;
+  /* text-align: center; có thể bỏ đi vì display của thẻ a là inline nên box luôn bao quanh chữ rồi */
+  font-size: 1.6rem;
+  /* background-color: blue; */
+  padding: 8px 21px;
+  /* margin: 8px 21px; */
+}
+
+.nav li.active a,
+.nav a:hover {
+  color: #610d0d;
+  /* font-weight: 900; */
+  /* line-height: 28px; 175% */
+  /* chỉ có font-weight và line-height là ảnh hưởng nếu bỏ đi */
+  text-shadow: 1 0 0 currentColor;
+  /* thay vì dùng font-weight ta dùng text-shadow để tạo hiệu ứng bóng đổ sang phải ko bị hiện tượng giật giật text xung quanh */
+}
+.nav li.active a::after {
+  display: block;
+  position: absolute;
+  left: 21px;
+  bottom: 6px;
+  content: "";
+  width: 12px;
+  height: 2px;
+  border-radius: 1px;
+  background: #171100;
+  /* với trạng thái inline phần tử đó sẽ không set được width, height */
+}
+.header .btn-sign-up {
+  min-width: 144px;
+}
+
+.header .action {
+  margin-left: 49px;
 }
